@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 
 #target func 
 #eg. x^2 + 3x^4 = [0,0,2,0,4]
-func_para = [0,0,2,-1]
-
+func_para = [0,1,0,0,0,2,1]
+print(func_para)
 #return y
 def func(x):
     y =0
@@ -39,14 +39,14 @@ def GD(x_start, df, epoches, lr):
 
     return passed_points
 
-x_start = -5
-epoches = 20
-lr = 0.005
+x_start = -0.5
+epoches = 15
+lr = 0.03
 x = GD(x_start, dfunc, epoches, lr)
 print(x)
 
 from numpy import arange 
-t = arange(-10,10,0.01)
+t = arange(-2,1,0.0001)
 
 plt.plot(t, [func(i) for i in t], c='b')
 plt.plot(x, [func(i) for i in x], c='r', label=f"lr={lr}")
